@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DroidBay : MonoBehaviour, ITimeable
@@ -42,23 +39,17 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     public void DeployDroid()
     {
-
         StartCoroutine(timer.StartTimerCouroutine(10, this));
-
     }
 
     public void UpgradeDroid()
     {
-
         Debug.Log("Upgrading from: " + _droidBayModel.GetBayIndex());
-
     }
 
     public void RemoveDroid()
     {
-
         Debug.Log("Removing from: " + _droidBayModel.GetBayIndex());
-
     }
 
     public void OnStartTimer()
@@ -75,8 +66,6 @@ public class DroidBay : MonoBehaviour, ITimeable
         Debug.Log("Decrementing");
 
         _droidBayView.GetTimerText().text = "" + timer.GetRemainingSeconds();
-
-
     }
 
     public void OnFinishTimer()
