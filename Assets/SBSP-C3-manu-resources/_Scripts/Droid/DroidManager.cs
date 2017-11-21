@@ -14,18 +14,14 @@ public class DroidManager : MonoBehaviour {
 
     void Awake()
     {
-
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
-
     }
 
     void Start()
     {
-
         _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
-
     }
 
     public void CreateNewBay()
@@ -44,12 +40,6 @@ public class DroidManager : MonoBehaviour {
             _droidManagerModel.SetBaySize(_droidManagerModel.GetCurrentSize() + 1);
 
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
-
         }
-
     }
-
-
-
-
 }

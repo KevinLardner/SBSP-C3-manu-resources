@@ -11,47 +11,35 @@ public class DroidBayView{
 
 	public DroidBayView(Button deploy, Button upgrade, Button remove, Text timerText, Image droidImage)
     {
-
         _deployButton = deploy;
         _upgradeButton = upgrade;
         _removeButton = remove;
         _timerText = timerText;
         _droidImage = droidImage;
-
     }
 
     public Button GetDeployButton()
     {
-
         return _deployButton;
-
     }
 
     public Button GetUpgradeButton()
     {
-
         return _upgradeButton;
-
     }
 
     public Button GetRemoveButton()
     {
-
         return _removeButton;
-
     }
 
     public Text GetTimerText()
     {
-
         return _timerText;
-
     }
 
     public Image GetDroidImage()
     {
-
         return _droidImage;
-
     }
 }

@@ -12,24 +12,17 @@ public class Droid{
 
     public Droid()
     {
-
         _droidModel = new DroidModel();
         _droidView = new DroidView();
-
     }
 
     public DroidModel GetDroidModel()
     {
-
         return _droidModel;
-
     }
 
     public DroidView GetDroidView()
     {
-
         return _droidView;
-
     }
-	
 }

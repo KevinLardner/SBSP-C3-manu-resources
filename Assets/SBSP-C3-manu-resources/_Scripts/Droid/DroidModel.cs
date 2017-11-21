@@ -6,11 +6,8 @@
 
     public DroidModel()
     {
-
         _health = 10;
         _energy = 10;
         _deployTime = 10;
-
     }
-
 }

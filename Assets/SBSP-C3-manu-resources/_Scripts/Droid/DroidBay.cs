@@ -14,7 +14,6 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     private RechargeTimer timer;
 
-
     void Awake()
     {
         _droidBayModel = new DroidBayModel();
