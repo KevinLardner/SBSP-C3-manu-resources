@@ -1,35 +1,48 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
 
 public class ManuModel
 {
 
-    /// <summary>
-    /// items that can be manufactured 
-    /// </summary>
-    private string manufactureText = "Manufacture";
-    private string rockets = "Bang Bang Pew Pew ";
-    private string fuel = "Stuff for flying";
-    private string ammo = "Bang Bang ";
+    private ManuPanelController manuPanelController;
+    private ResearchPanelController researchPanelController;
+    private Manufacture _manufacture;
 
-    /// <summary>
-    /// setters for manu facture items 
-    /// </summary>
-    /// <returns></returns>
-    public string GetManufactureText()
-    {
-        return manufactureText;
-    }
-    public string GetRocketText()
-    {
-        return rockets;
-    }
-    public string GetFuelText()
-    {   
-        return fuel;
+    private RechargeTimer _timer;
+    private ManuView _view;
 
-    }
-    public string GetAmmoText()
+    public ManuModel(Text name,Text description, Button button,Text cost)
     {
-        return ammo;
+        _view = new ManuView(name, description, button, cost);
+        _timer = new RechargeTimer();
+    }
+
+    public void SetManufacture(Manufacture manufacture)
+    {
+        _manufacture = manufacture;
+
+        _view.SetName(_manufacture.GetName());
+        _view.SetDescription(_manufacture.GetDescription());
+        _view.SetCost("Cost to Produce: " + _manufacture.GetCost());
+    }
+
+    public void SetManufacturePanelController(ManuPanelController controller)
+    {
+        manuPanelController = controller;
+    }
+
+    public ManuView GetManuView()
+    {
+        return _view;
+    }
+
+    public Manufacture GetManufacture()
+    {
+        return _manufacture;
+    }
+
+
+    public RechargeTimer GetTimer()
+    {
+        return _timer;
     }
 }

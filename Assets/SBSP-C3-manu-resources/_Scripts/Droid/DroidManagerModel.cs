@@ -2,19 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroidManagerModel{
+public class DroidManagerModel
+{
+
+    private MainResourceController _mainController;
 
     //current and max size of bays
     private int _baySize;
-    private int _maxBaySize = 3;
+    private int _maxBaySize = 2;
 
-    private DroidBay[] _droidBayArray;
+    private List<DroidBay> _droidBayArray;
 
     public DroidManagerModel()
     {
 
         _baySize = 0;
-        _droidBayArray = new DroidBay[_maxBaySize];
+        _droidBayArray = new List<DroidBay>();
+
+    }
+
+    public void SetMainController(MainResourceController controller)
+    {
+
+        _mainController = controller;
+
+    }
+
+    public MainResourceController GetMainController()
+    {
+
+        return _mainController;
 
     }
 
@@ -28,7 +45,7 @@ public class DroidManagerModel{
     public void AddNewBay(DroidBay newBay)
     {
 
-        _droidBayArray[_baySize] = newBay;
+        _droidBayArray.Add(newBay);
 
     }
 
@@ -43,6 +60,20 @@ public class DroidManagerModel{
     {
 
         return _maxBaySize;
+
+    }
+
+    public void SetMaxBaySize(int value)
+    {
+
+        _maxBaySize = value;
+
+    }
+
+    public DroidBay GetDroidBay(int value)
+    {
+
+        return _droidBayArray[value];
 
     }
 	
