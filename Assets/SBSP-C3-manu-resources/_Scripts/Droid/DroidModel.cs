@@ -19,6 +19,13 @@ public class DroidModel{
 
     public DroidModel()
     {
+<<<<<<< HEAD
+        _health = 10;
+        _energy = 10;
+        _deployTime = 10;
+    }
+}
+=======
         _droidView = new DroidView();
         _droidState = DroidState.Ready;
     }
@@ -128,3 +135,4 @@ public class DroidModel{
         _currentEnergy = value;
     }
 }
+>>>>>>> upstream/master

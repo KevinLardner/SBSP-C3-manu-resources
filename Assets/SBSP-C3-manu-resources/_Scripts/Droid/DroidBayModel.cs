@@ -1,12 +1,17 @@
+<<<<<<< HEAD
+﻿public class DroidBayModel
+=======
 ﻿using UnityEngine.UI;
 using UnityEngine;
 
 [System.Serializable]
 public class DroidBayModel : ITimeable
+>>>>>>> upstream/master
 {
-
     private int _bayIndex;
     private Droid _currentDroid;
+<<<<<<< HEAD
+=======
     private DroidManager _droidManager;
 
     //when model is updated, it will update view as well
@@ -54,19 +59,28 @@ public class DroidBayModel : ITimeable
         return _droidBayView;
 
     }
+>>>>>>> upstream/master
 
     public int GetBayIndex()
     {
         return _bayIndex;
-
     }
 
     public void SetBayIndex(int value)
     {
         _bayIndex = value;
-
     }
 
+    public Droid GetDroid()
+    {
+        return _currentDroid;
+    }
+
+<<<<<<< HEAD
+    public void SetDroid(Droid droid)
+    {
+        _currentDroid = droid;
+=======
     public Droid GetDroid()
     {
 
@@ -123,5 +137,6 @@ public class DroidBayModel : ITimeable
         _droidBayView.UpdateStatusText("Ready");
         _droidBayView.EnableDroidImage();
 
+>>>>>>> upstream/master
     }
 }

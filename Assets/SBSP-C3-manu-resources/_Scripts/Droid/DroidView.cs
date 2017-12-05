@@ -9,6 +9,9 @@ public class DroidView{
     public void SetDroidSprite(Sprite sprite)
     {
 
+<<<<<<< HEAD
+    }
+=======
         _droidSprite = sprite;
 
     }
@@ -20,4 +23,5 @@ public class DroidView{
 
     }
 
+>>>>>>> upstream/master
 }

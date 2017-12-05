@@ -16,9 +16,14 @@ public class DroidBayView{
     public Text _droidHealthText;
     public Text _droidEnergyText;
 
+<<<<<<< HEAD
+	public DroidBayView(Button deploy, Button upgrade, Button remove, Text timerText, Image droidImage)
+    {
+=======
 	public DroidBayView(Button deploy, Button upgrade, Button remove, Button recharge,
         Button repair, Text statusText,Text droidTypeText,Text deployTimeText, Image droidImage, Text droidHealthText, Text droidEnergyText){
 
+>>>>>>> upstream/master
         _deployButton = deploy;
         _upgradeButton = upgrade;
         _removeButton = remove;
@@ -28,32 +33,29 @@ public class DroidBayView{
         _droidTypeText = droidTypeText;
         _droidDeployTimeText = deployTimeText;
         _droidImage = droidImage;
+<<<<<<< HEAD
+=======
         _droidHealthText = droidHealthText;
         _droidEnergyText = droidEnergyText;
 
         _droidImage.gameObject.SetActive(false);
 
+>>>>>>> upstream/master
     }
 
     public Button GetDeployButton()
     {
-
         return _deployButton;
-
     }
 
     public Button GetUpgradeButton()
     {
-
         return _upgradeButton;
-
     }
 
     public Button GetRemoveButton()
     {
-
         return _removeButton;
-
     }
 
     public Button GetRepairButton()
@@ -72,16 +74,18 @@ public class DroidBayView{
 
     public Text GetStatusText()
     {
+<<<<<<< HEAD
+        return _timerText;
+=======
 
         return _statusText;
 
+>>>>>>> upstream/master
     }
 
     public Image GetDroidImage()
     {
-
         return _droidImage;
-
     }
 
     public bool EnableDroidImage()

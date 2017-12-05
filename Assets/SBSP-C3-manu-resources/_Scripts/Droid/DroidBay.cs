@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DroidBay : MonoBehaviour, ITimeable
@@ -21,6 +18,12 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     [SerializeField]
     private DroidBayModel _droidBayModel;
+<<<<<<< HEAD
+    private DroidBayView _droidBayView;
+
+    private RechargeTimer timer;
+=======
+>>>>>>> upstream/master
 
     void Awake()
     {
@@ -40,6 +43,9 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     public void DeployDroid()
     {
+<<<<<<< HEAD
+        StartCoroutine(timer.StartTimerCouroutine(10, this));
+=======
         if (_droidBayModel.GetDroid() != null)
         {
             if (_droidBayModel.GetDroid().GetDroidModel().GetDroidCurrentEnergy() < _droidBayModel.GetDroid().GetDroidModel().GetEnergyConsumption() * _droidBayModel.GetDroid().GetDroidModel().GetDroidDeployTime())
@@ -47,10 +53,14 @@ public class DroidBay : MonoBehaviour, ITimeable
 
             StartCoroutine(_droidBayModel.GetTimer().StartTimerCouroutine(_droidBayModel.GetDroid().GetDroidModel().GetDroidDeployTime(), this));
         }
+>>>>>>> upstream/master
     }
 
     public void UpgradeDroid()
     {
+<<<<<<< HEAD
+        Debug.Log("Upgrading from: " + _droidBayModel.GetBayIndex());
+=======
         if (_droidBayModel.GetDroid() == null)
         {
             //Droid newDroid = DroidFactory.instance.CreateDroid(DroidType.SearchDroid);
@@ -59,10 +69,18 @@ public class DroidBay : MonoBehaviour, ITimeable
             //AddDroidToBay(newDroid);
         }
 
+>>>>>>> upstream/master
     }
 
     public void RemoveDroid()
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        Debug.Log("Removing from: " + _droidBayModel.GetBayIndex());
+=======
+
+>>>>>>> 918a3d2c661f456eb96646f4987cabe732822eaa
         Debug.Log("Removing");
 
         if (GetDroidBayModel().GetDroid().GetDroidModel().GetDroidState() == DroidState.Ready)
@@ -72,6 +90,11 @@ public class DroidBay : MonoBehaviour, ITimeable
 
             GetDroidBayModel().GetDroidBayView().CleanBay();
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
+>>>>>>> 918a3d2c661f456eb96646f4987cabe732822eaa
     }
 
     public void RepairDroid()
@@ -81,6 +104,13 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     public void RechargeDroid()
     {
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+        _droidBayView.GetTimerText().text = "" + timer.GetRemainingSeconds();
+=======
+>>>>>>> 918a3d2c661f456eb96646f4987cabe732822eaa
         Debug.Log("Recharging");
     }
 
@@ -94,6 +124,7 @@ public class DroidBay : MonoBehaviour, ITimeable
     {
         _droidBayModel.OnIncrementTimer();
         _droidBayModel.GetDroid().PerformDroidAction();
+>>>>>>> upstream/master
     }
 
     public void OnFinishTimer()
@@ -111,9 +142,13 @@ public class DroidBay : MonoBehaviour, ITimeable
 
         return true;
     }
+<<<<<<< HEAD
+}
+=======
 
     public void OnResearchLearned()
     {
         Debug.Log("Research learned, called from: " + this); //if correct research learned
     }
 }
+>>>>>>> upstream/master
