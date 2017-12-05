@@ -300,6 +300,61 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 131925081}
+<<<<<<< HEAD
+=======
+--- !u!1 &148730812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 148730815}
+  - component: {fileID: 148730814}
+  - component: {fileID: 148730813}
+  m_Layer: 0
+  m_Name: manufacture object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &148730813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 148730812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f373d3d81d866ec4fb21c9116f78c7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &148730814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 148730812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &148730815
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 148730812}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 286.67093, y: 329.76114, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> 8974a87a5ffa4233bf6a608ca841f47847492420
 --- !u!1 &316715069
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,10 +432,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 316715069}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 85717d31d22a2e0459288e118c689ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maufacturePrefab: {fileID: 1877967010850818, guid: c5f4fa07716aab2449ace978029e5c7c,
+=======
+  m_Script: {fileID: 11500000, guid: 1c74cfc1dcc50594f878c80496bdb0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: {fileID: 114143248052962304, guid: e059b6afe6a50cd48a8b714e6d438aaa, type: 2}
+  description: {fileID: 114523752406038650, guid: e059b6afe6a50cd48a8b714e6d438aaa,
+    type: 2}
+  button: {fileID: 114798534785227436, guid: e059b6afe6a50cd48a8b714e6d438aaa, type: 2}
+  cost: {fileID: 0}
+  maufacturePrefab: {fileID: 1877967010850818, guid: e059b6afe6a50cd48a8b714e6d438aaa,
+>>>>>>> 8974a87a5ffa4233bf6a608ca841f47847492420
     type: 2}
 --- !u!1 &604398154
 GameObject:
@@ -416,6 +483,7 @@ MonoBehaviour:
     ironImage: {fileID: 21300000, guid: 39ad4db32d4554d47ade6d92f027dece, type: 3}
     goldImage: {fileID: 21300000, guid: 41037ff79ae34f24ba23e2cbe266872a, type: 3}
     fuelImage: {fileID: 21300000, guid: 92335e82d352a3543ac3c4eac4674414, type: 3}
+    ammoImage: {fileID: 21300000, guid: 9d2a62dc5e8f90746b1e3a237e00e108, type: 3}
 --- !u!4 &604398156
 Transform:
   m_ObjectHideFlags: 0
