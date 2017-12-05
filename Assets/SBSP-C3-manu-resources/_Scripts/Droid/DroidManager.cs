@@ -14,35 +14,20 @@ public class DroidManager : MonoBehaviour, IResearchEvent
     private DroidManagerView _droidManagerView;
 
     void Awake()
-<<<<<<< HEAD
     {
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
-        _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
-=======
-    {    
+        _droidManagerView = new DroidManagerView(createBayButton,maxBayText);   
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
-<<<<<<< HEAD
-=======
-
-
->>>>>>> upstream/master
->>>>>>> 918a3d2c661f456eb96646f4987cabe732822eaa
     }
 
     void Start()
     {
         _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
-<<<<<<< HEAD
-=======
-        SuscribeToResearchEvent(_droidManagerModel.GetMainController().GetResearchController());
-<<<<<<< HEAD
-=======
 
->>>>>>> upstream/master
->>>>>>> 918a3d2c661f456eb96646f4987cabe732822eaa
+        SuscribeToResearchEvent(_droidManagerModel.GetMainController().GetResearchController());
     }
 
     public DroidManagerModel GetDroidManagerModel()
@@ -67,15 +52,8 @@ public class DroidManager : MonoBehaviour, IResearchEvent
             _droidManagerModel.SetBaySize(_droidManagerModel.GetCurrentSize() + 1);
 
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
-<<<<<<< HEAD
-        }
-    }
-}
-=======
 
-            //subscribe to research event
         }
-
     }
 
     public bool AddDroidToBay(Droid droid)
@@ -109,9 +87,4 @@ public class DroidManager : MonoBehaviour, IResearchEvent
     {
         controller.onFinished += OnResearchLearned;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> upstream/master
->>>>>>> 918a3d2c661f456eb96646f4987cabe732822eaa

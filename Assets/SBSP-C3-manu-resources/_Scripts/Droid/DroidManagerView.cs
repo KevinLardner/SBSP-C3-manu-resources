@@ -12,18 +12,12 @@ public class DroidManagerView{
 
     public DroidManagerView(Button button, Text maxBayText)
     {
-
         _createNewBayButton = button;
         _maxBayText = maxBayText;
-
     }
-
 
     public void SetBayStatus(int current, int max)
     {
-
         _maxBayText.text = MAX_BAY_STRING + current + "/" + max;
-
     }
-
 }

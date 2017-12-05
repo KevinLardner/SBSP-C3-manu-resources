@@ -8,7 +8,6 @@ public class RepairDroidModel : DroidModel
 
     public RepairDroidModel()
     {
-
         _maxHealth = 150;
         _maxEnergy = 100;
         _deployTime = 25;

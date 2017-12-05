@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
-public class DroidModel{
+public class DroidModel
+{
 
     protected int _maxHealth;
     protected int _maxEnergy;
@@ -15,17 +16,14 @@ public class DroidModel{
     protected DroidType _droidType;
 
     private DroidBay _currentDroidBay;
-    
+
 
     public DroidModel()
     {
-<<<<<<< HEAD
         _health = 10;
         _energy = 10;
         _deployTime = 10;
-    }
-}
-=======
+
         _droidView = new DroidView();
         _droidState = DroidState.Ready;
     }
@@ -135,4 +133,3 @@ public class DroidModel{
         _currentEnergy = value;
     }
 }
->>>>>>> upstream/master
