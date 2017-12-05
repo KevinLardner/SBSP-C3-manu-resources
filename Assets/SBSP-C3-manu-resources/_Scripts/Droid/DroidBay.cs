@@ -24,7 +24,6 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     void Awake()
     {
-
         _droidBayModel = new DroidBayModel(deployButton, upgradeButton, removeButton,rechargeButton,repairButton, statusText,droidTypeText,deployTimeText, droidImage, droidHealthText, droidEnergyText);
 
         _droidBayModel.GetDroidBayView().GetDeployButton().onClick.AddListener(DeployDroid);
@@ -32,7 +31,6 @@ public class DroidBay : MonoBehaviour, ITimeable
         _droidBayModel.GetDroidBayView().GetRemoveButton().onClick.AddListener(RemoveDroid);
         _droidBayModel.GetDroidBayView().GetRepairButton().onClick.AddListener(RepairDroid);
         _droidBayModel.GetDroidBayView().GetRechargeButton().onClick.AddListener(RechargeDroid);
-
     }
 
     public DroidBayModel GetDroidBayModel()
@@ -48,7 +46,6 @@ public class DroidBay : MonoBehaviour, ITimeable
                 return;
 
             StartCoroutine(_droidBayModel.GetTimer().StartTimerCouroutine(_droidBayModel.GetDroid().GetDroidModel().GetDroidDeployTime(), this));
-
         }
     }
 
@@ -56,19 +53,16 @@ public class DroidBay : MonoBehaviour, ITimeable
     {
         if (_droidBayModel.GetDroid() == null)
         {
-
             //Droid newDroid = DroidFactory.instance.CreateDroid(DroidType.SearchDroid);
             //.GetDroidModel().SetCurrentDroidBay(this);
 
             //AddDroidToBay(newDroid);
-
         }
 
     }
 
     public void RemoveDroid()
     {
-
         Debug.Log("Removing");
 
         if (GetDroidBayModel().GetDroid().GetDroidModel().GetDroidState() == DroidState.Ready)
@@ -78,21 +72,16 @@ public class DroidBay : MonoBehaviour, ITimeable
 
             GetDroidBayModel().GetDroidBayView().CleanBay();
         }
-
     }
 
     public void RepairDroid()
     {
-
         Debug.Log("Repairing");
-
     }
 
     public void RechargeDroid()
     {
-
         Debug.Log("Recharging");
-
     }
 
     public void OnStartTimer()
@@ -117,18 +106,14 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     public bool AddDroidToBay(Droid droid)
     {
-
         if (!_droidBayModel.SetDroid(droid))
             return false;
 
         return true;
-
     }
 
     public void OnResearchLearned()
     {
-        Debug.Log("Research learned, called from: " + this);
-        //if correct research learned
+        Debug.Log("Research learned, called from: " + this); //if correct research learned
     }
-
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DroidManagerModel
 {
-
     private MainResourceController _mainController;
 
     //current and max size of bays

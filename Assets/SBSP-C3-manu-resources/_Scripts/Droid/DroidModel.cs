@@ -127,6 +127,4 @@ public class DroidModel{
     {
         _currentEnergy = value;
     }
-
-
 }

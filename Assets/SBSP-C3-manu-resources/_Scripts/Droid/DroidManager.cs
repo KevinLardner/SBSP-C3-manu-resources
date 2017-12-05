@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class DroidManager : MonoBehaviour, IResearchEvent
 {
-
     public Button createBayButton;
     public Text maxBayText;
     public GameObject bayPrefab;
@@ -19,16 +18,12 @@ public class DroidManager : MonoBehaviour, IResearchEvent
         _droidManagerModel = new DroidManagerModel();
         createBayButton.onClick.AddListener(CreateNewBay);
         _droidManagerView = new DroidManagerView(createBayButton,maxBayText);
-
-
     }
 
     void Start()
     {
-
         _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
         SuscribeToResearchEvent(_droidManagerModel.GetMainController().GetResearchController());
-
     }
 
     public DroidManagerModel GetDroidManagerModel()
@@ -54,8 +49,7 @@ public class DroidManager : MonoBehaviour, IResearchEvent
 
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
 
-            //suscribe to research event
-
+            //subscribe to research event
         }
 
     }
@@ -68,9 +62,7 @@ public class DroidManager : MonoBehaviour, IResearchEvent
 
             if (_droidManagerModel.GetDroidBay(i).AddDroidToBay(droid))
             {
-
                 return true;
-
             }
 
         }
@@ -83,7 +75,6 @@ public class DroidManager : MonoBehaviour, IResearchEvent
     {
         if (_droidManagerModel.GetMainController().GetResearchController().IsResearchLearned(AllResearches.More_Bays))
         {
-
             _droidManagerModel.SetMaxBaySize(4);
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
 
@@ -92,8 +83,6 @@ public class DroidManager : MonoBehaviour, IResearchEvent
 
     public void SuscribeToResearchEvent(ResearchPanelController controller)
     {
-
         controller.onFinished += OnResearchLearned;
-
     }
 }
