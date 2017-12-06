@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RepairDroidModel : DroidModel
 {
-
     public RepairDroidModel()
     {
         _maxHealth = 150;
@@ -17,5 +16,4 @@ public class RepairDroidModel : DroidModel
 
         _droidType = DroidType.RepairDroid;
     }
-
 }

@@ -58,19 +58,14 @@ public class DroidManager : MonoBehaviour, IResearchEvent
 
     public bool AddDroidToBay(Droid droid)
     {
-
         for (int i = 0; i < _droidManagerModel.GetCurrentSize(); i++)
         {
-
             if (_droidManagerModel.GetDroidBay(i).AddDroidToBay(droid))
             {
                 return true;
             }
-
         }
-
         return false;
-
     }
 
     public void OnResearchLearned()
@@ -79,7 +74,6 @@ public class DroidManager : MonoBehaviour, IResearchEvent
         {
             _droidManagerModel.SetMaxBaySize(4);
             _droidManagerView.SetBayStatus(_droidManagerModel.GetCurrentSize(), _droidManagerModel.GetMaxBaySize());
-
         }
     }
 

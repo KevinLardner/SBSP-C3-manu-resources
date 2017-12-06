@@ -3,7 +3,6 @@ using UnityEngine;
 
 [System.Serializable]
 public class DroidBayModel : ITimeable
-
 {
     private int _bayIndex;
     private Droid _currentDroid;
@@ -19,40 +18,28 @@ public class DroidBayModel : ITimeable
         Button repair, Text statusText, Text droidTypeText, Text deployTimeText, Image droidImage, Text droidHealthText, Text droidEnergyText) {
 
         _timer = new RechargeTimer();
-        _droidBayView = new DroidBayView(deploy, upgrade, remove, recharge,
-        repair, statusText, droidTypeText, deployTimeText, droidImage, droidHealthText, droidEnergyText);
-
+        _droidBayView = new DroidBayView(deploy, upgrade, remove, recharge, repair, statusText, droidTypeText, deployTimeText, droidImage, droidHealthText, droidEnergyText);
         _droidBayView.CleanBay();
-
     }
 
     public void SetDroidManager(DroidManager manager)
     {
-
         _droidManager = manager;
-
     }
 
     public DroidManager GetDroidManager()
     {
-
         return _droidManager;
-
     }
-
 
     public RechargeTimer GetTimer()
     {
-
         return _timer;
-
     }
 
     public DroidBayView GetDroidBayView()
     {
-
         return _droidBayView;
-
     }
 
     public int GetBayIndex()
@@ -70,65 +57,47 @@ public class DroidBayModel : ITimeable
         return _currentDroid;
     }
 
-    public void SetDroid(Droid droid)
+    bool SetDroid(Droid droid)
     {
-        _currentDroid = droid;
-
-        Droid GetDroid()
+        if (_currentDroid == null)
         {
-
-            return _currentDroid;
-
-        }
-
-        bool SetDroid(Droid droid)
-        {
-
-            if (_currentDroid == null)
+            if (droid != null)
             {
+                _currentDroid = droid;
+                _droidBayView.GetDroidImage().sprite = droid.GetDroidModel().GetDroidView().GetDroidSprite();
+                _droidBayView.EnableDroidImage();
 
-                if (droid != null)
-                {
-                    _currentDroid = droid;
-                    _droidBayView.GetDroidImage().sprite = droid.GetDroidModel().GetDroidView().GetDroidSprite();
-                    _droidBayView.EnableDroidImage();
+                _currentDroid.GetDroidModel().SetCurrentDroidBay(GetDroidManager().GetDroidManagerModel().GetDroidBay(_bayIndex));
 
-                    _currentDroid.GetDroidModel().SetCurrentDroidBay(GetDroidManager().GetDroidManagerModel().GetDroidBay(_bayIndex));
-
-                    _droidBayView.UpdateViewFromNewDroid(_currentDroid);
-                }
-
-                return true;
-
+                _droidBayView.UpdateViewFromNewDroid(_currentDroid);
             }
-
-            else if (_currentDroid != null && droid == null)
-            {
-                _currentDroid = null;
-                _droidBayView.CleanBay();
-            }
-
-            return false;
-
+            return true;
         }
 
-        void OnStartTimer()
+        else if (_currentDroid != null && droid == null)
         {
-            _droidBayView.UpdateStatusText(_timer.GetRemainingSecondsInt() + "");
-            _droidBayView.DisableDroidImage();
-            _droidBayView.DisableDeployButton();
+            _currentDroid = null;
+            _droidBayView.CleanBay();
         }
+        return false;
+    }
 
-        void OnIncrementTimer()
-        {
-            _droidBayView.UpdateStatusText(_timer.GetRemainingSecondsInt() + "");
-        }
+    public void OnStartTimer()
+    {
+        _droidBayView.UpdateStatusText(_timer.GetRemainingSecondsInt() + "");
+        _droidBayView.DisableDroidImage();
+        _droidBayView.DisableDeployButton();
+    }
 
-        void OnFinishTimer()
-        {
-            _droidBayView.EnableDeployButton();
-            _droidBayView.UpdateStatusText("Ready");
-            _droidBayView.EnableDroidImage();
-        }
+    public void OnIncrementTimer()
+    {
+        _droidBayView.UpdateStatusText(_timer.GetRemainingSecondsInt() + "");
+    }
+
+    public void OnFinishTimer()
+    {
+        _droidBayView.EnableDeployButton();
+        _droidBayView.UpdateStatusText("Ready");
+        _droidBayView.EnableDroidImage();
     }
 }

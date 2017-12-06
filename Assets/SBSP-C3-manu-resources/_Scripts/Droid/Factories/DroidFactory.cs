@@ -10,17 +10,13 @@ public class DroidFactory{
 
     public DroidFactory()
     {
-
         instance = this;
-
     }
 
     public Droid CreateDroid(DroidType type)
     {
-
         if (type == DroidType.SearchDroid)
         {
-
             Droid droid = new SearchDroid();
             droid.SetItemType(ItemType.Droid);
             droid.SetItemName("Search Droid");
@@ -29,12 +25,10 @@ public class DroidFactory{
             droid.SetStackable(1);
 
             return droid;
-
         }
 
         if (type == DroidType.RepairDroid)
         {
-
             Droid droid = new RepairDroid();
             droid.SetItemType(ItemType.Droid);
             droid.SetItemName("Repair droid");
@@ -43,11 +37,7 @@ public class DroidFactory{
             droid.SetStackable(1);
 
             return droid;
-
         }
-
         return null;
-
     }
-
 }

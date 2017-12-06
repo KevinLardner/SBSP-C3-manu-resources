@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -16,81 +17,69 @@ public class DroidBayView {
     public Text _droidHealthText;
     public Text _droidEnergyText;
 
-    public DroidBayView(Button deploy, Button upgrade, Button remove, Text timerText, Image droidImage)
+
+    public DroidBayView(Button deploy, Button upgrade, Button remove, Button recharge, Button repair, Text statusText, Text droidTypeText, Text deployTimeText, Image droidImage, Text droidHealthText, Text droidEnergyText)
     {
-        DroidBayView(deploy, upgrade, remove, recharge, repair, statusText, droidTypeText, deployTimeText, droidImage, droidHealthText, DroidEnergyText);
-        { 
-            _deployButton = deploy;
-            _upgradeButton = upgrade;
-            _removeButton = remove;
-            _rechargeButton = recharge;
-            _repairButton = repair;
-            _statusText = statusText;
-            _droidTypeText = droidTypeText;
-            _droidDeployTimeText = deployTimeText;
-            _droidImage = droidImage;
-            _droidHealthText = droidHealthText;
-            _droidEnergyText = droidEnergyText;
+        this._deployButton = deploy;
+        this._upgradeButton = upgrade;
+        this._removeButton = remove;
+        this._rechargeButton = recharge;
+        this._repairButton = repair;
+        this._statusText = statusText;
+        this._droidTypeText = droidTypeText;
+        this._droidDeployTimeText = deployTimeText;
+        this._droidImage = droidImage;
+        this._droidHealthText = droidHealthText;
+        this._droidEnergyText = droidEnergyText;
+    }
 
-            _droidImage.gameObject.SetActive(false);
-
-        }
-
-        Button GetDeployButton()
+        public Button GetDeployButton()
         {
             return _deployButton;
         }
 
-        Button GetUpgradeButton()
+        public Button GetUpgradeButton()
         {
             return _upgradeButton;
         }
 
-        Button GetRemoveButton()
+        public Button GetRemoveButton()
         {
             return _removeButton;
         }
 
-        Button GetRepairButton()
+        public Button GetRepairButton()
         {
-
             return _repairButton;
-
         }
 
-        Button GetRechargeButton()
+        public Button GetRechargeButton()
         {
-
             return _rechargeButton;
-
         }
 
-        Text GetStatusText()
+        public Text GetStatusText()
         {
-            return _timerText;
             return _statusText;
         }
 
-        Image GetDroidImage()
+        public Image GetDroidImage()
         {
             return _droidImage;
         }
 
-        bool EnableDroidImage()
+        public bool EnableDroidImage()
         {
-
             if (_droidImage.IsActive())
                 return false;
 
             _droidImage.gameObject.SetActive(true);
 
             return true;
-
         }
 
-        bool DisableDroidImage()
+        public bool DisableDroidImage()
         {
-
             if (!_droidImage.IsActive())
                 return false;
 
@@ -100,19 +89,17 @@ public class DroidBayView {
 
         }
 
-        bool EnableDeployButton()
+        public bool EnableDeployButton()
         {
-
             if (_deployButton.IsActive())
                 return false;
 
             _deployButton.gameObject.SetActive(true);
 
             return true;
-
         }
 
-        bool DisableDeployButton()
+        public bool DisableDeployButton()
         {
             if (!_deployButton.IsActive())
                 return false;
@@ -120,73 +107,54 @@ public class DroidBayView {
             _deployButton.gameObject.SetActive(false);
 
             return true;
-
         }
 
-        void UpdateStatusText(string value)
+        public void UpdateStatusText(string value)
         {
-
             _statusText.text = value;
-
         }
 
-        Text GetDroidTypeText()
+        public Text GetDroidTypeText()
         {
-
             return _droidTypeText;
-
         }
 
-        Text GetDroidDeployTimeText()
+        public Text GetDroidDeployTimeText()
         {
-
             return _droidDeployTimeText;
-
         }
 
-        Text GetDroidHealthText()
+        public Text GetDroidHealthText()
         {
-
             return _droidHealthText;
-
         }
 
-        Text GetDroidEnergyText()
+        public Text GetDroidEnergyText()
         {
-
             return _droidEnergyText;
-
         }
 
-        void SetDroidTypeText(Droid droid)
+        public void SetDroidTypeText(Droid droid)
         {
-
             _droidTypeText.text = droid.GetDroidModel().GetDroidTypeString();
-
         }
 
-        void SetDroidDeployTimeText(Droid droid)
+        public void SetDroidDeployTimeText(Droid droid)
         {
-
             _droidDeployTimeText.text = droid.GetDroidModel().GetDroidDeployTime() + " secs";
-
         }
 
-        void SetDroidHealthText(Droid droid)
+        public void SetDroidHealthText(Droid droid)
         {
-
             _droidHealthText.text = droid.GetDroidModel().GetDroidCurrentHealth() + "/" + droid.GetDroidModel().GetDroidMaxHealth();
-
         }
 
-        void SetDroidEnergyText(Droid droid)
+        public void SetDroidEnergyText(Droid droid)
         {
-
             _droidEnergyText.text = droid.GetDroidModel().GetDroidCurrentEnergy() + "/" + droid.GetDroidModel().GetDroidMaxEnergy();
-
         }
 
-        void UpdateViewFromNewDroid(Droid droid)
+        public void UpdateViewFromNewDroid(Droid droid)
         {
             SetDroidTypeText(droid);
             SetDroidDeployTimeText(droid);
@@ -201,7 +169,7 @@ public class DroidBayView {
             _droidTypeText.gameObject.SetActive(true);
         }
 
-        void CleanBay()
+        public void CleanBay()
         {
             _deployButton.interactable = false;
             _upgradeButton.interactable = false;
@@ -210,7 +178,5 @@ public class DroidBayView {
             _repairButton.interactable = false;
             _droidTypeText.gameObject.SetActive(false);
             _droidImage.gameObject.SetActive(false);
-
         }
-    }
 }

@@ -9,7 +9,6 @@ public class SearchDroidModel : DroidModel {
 
     public SearchDroidModel()
     {
-
         _maxHealth = 100;
         _maxEnergy = 200;
         _deployTime = 15;

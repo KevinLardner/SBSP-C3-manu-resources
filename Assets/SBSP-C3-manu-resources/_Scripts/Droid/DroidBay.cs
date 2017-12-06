@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class DroidBay : MonoBehaviour, ITimeable
 {
-
     public Button deployButton;
     public Button upgradeButton;
     public Button removeButton;
@@ -24,7 +23,7 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     void Awake()
     {
-        _droidBayModel = new DroidBayModel(deployButton, upgradeButton, removeButton,rechargeButton,repairButton, statusText,droidTypeText,deployTimeText, droidImage, droidHealthText, droidEnergyText);
+        _droidBayModel = new DroidBayModel(deployButton, upgradeButton, removeButton, rechargeButton, repairButton, statusText, droidTypeText, deployTimeText, droidImage, droidHealthText, droidEnergyText);
 
         _droidBayModel.GetDroidBayView().GetDeployButton().onClick.AddListener(DeployDroid);
         _droidBayModel.GetDroidBayView().GetUpgradeButton().onClick.AddListener(UpgradeDroid);
@@ -62,7 +61,7 @@ public class DroidBay : MonoBehaviour, ITimeable
 
             //AddDroidToBay(newDroid);
         }
-        
+
     }
 
     public void RemoveDroid()
@@ -118,9 +117,9 @@ public class DroidBay : MonoBehaviour, ITimeable
 
         return true;
     }
-}
 
     public void OnResearchLearned()
     {
         Debug.Log("Research learned, called from: " + this); //if correct research learned
     }
+}
