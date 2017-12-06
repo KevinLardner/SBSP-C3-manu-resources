@@ -85,8 +85,6 @@ public class DroidBay : MonoBehaviour, ITimeable
 
     public void RechargeDroid()
     {
-
-        _droidBayView.GetTimerText().text = "" + timer.GetRemainingSeconds();
         Debug.Log("Recharging");
     }
 

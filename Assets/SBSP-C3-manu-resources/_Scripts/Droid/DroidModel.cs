@@ -20,8 +20,8 @@ public class DroidModel
 
     public DroidModel()
     {
-        _health = 10;
-        _energy = 10;
+        _maxHealth = 10;
+        _maxEnergy = 10;
         _deployTime = 10;
 
         _droidView = new DroidView();
@@ -30,9 +30,7 @@ public class DroidModel
 
     public void SetCurrentDroidBay(DroidBay bay)
     {
-
         _currentDroidBay = bay;
-
     }
 
     public int GetEnergyConsumption()

@@ -22,6 +22,10 @@ public class DroidBayModel : ITimeable
         _droidBayView.CleanBay();
     }
 
+    public DroidBayModel()
+    {
+    }
+
     public void SetDroidManager(DroidManager manager)
     {
         _droidManager = manager;
@@ -57,7 +61,7 @@ public class DroidBayModel : ITimeable
         return _currentDroid;
     }
 
-    bool SetDroid(Droid droid)
+    public bool SetDroid(Droid droid)
     {
         if (_currentDroid == null)
         {

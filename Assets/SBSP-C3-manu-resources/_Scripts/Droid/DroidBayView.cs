@@ -124,7 +124,12 @@ public class DroidBayView {
             return _droidDeployTimeText;
         }
 
-        public Text GetDroidHealthText()
+    internal object GetTimerText()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Text GetDroidHealthText()
         {
             return _droidHealthText;
         }
