@@ -8,7 +8,6 @@ public class ManuPanelController : MonoBehaviour, IResearchEvent
     private List<Manufacture> _manufacture;
     private MainResourceController _mainController;
 
-
     void Awake()
     {
         _manufacture = new List<Manufacture>();
@@ -19,14 +18,10 @@ public class ManuPanelController : MonoBehaviour, IResearchEvent
         _manufacture.Add(new Manufacture("Repair Droid", "Droid used for repairing the ship", AllManufacture.RepairDroid, 2));
     }
 
-
     void Start()
     {
-
         SuscribeToResearchEvent(_mainController.GetResearchController());
-
     }   
-
 
     public void SetMainController(MainResourceController controller)
     {
@@ -97,7 +92,6 @@ public class ManuPanelController : MonoBehaviour, IResearchEvent
             manuController.GetManuModel().GetManuView().GetManufactureButton().onClick.AddListener(manuController.Manufactureing);
             manuController.InventoryManager = _mainController.GetInventoryManager();
         }
-
     }
 
     public void SuscribeToResearchEvent(ResearchPanelController controller)
