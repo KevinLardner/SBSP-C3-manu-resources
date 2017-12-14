@@ -13,7 +13,6 @@ public class DroidView {
 
     public Sprite GetDroidSprite()
     {
-
         return _droidSprite;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using UnityEngine;
 
 namespace UnityTest
 {
@@ -19,20 +20,15 @@ namespace UnityTest
         }
 
         [Test]
-        public void TestAddDroidToNull()
+        public void TestDroidIsEmptyWhenAdded()
         {
             // Arrange
-            DroidBayModel db = new DroidBayModel();
+            DroidBayModel dbm = new DroidBayModel();
 
-            Droid newDroid = new Droid();
-
-            db.SetDroid(newDroid);
-
-            // Act
-            Droid expectedResult = newDroid;
+            Droid result = null;
 
             // Assert
-            Assert.AreEqual(db.GetDroid(), expectedResult);
+            Assert.AreEqual(dbm.GetDroid(), result);
         }
     }
 }
