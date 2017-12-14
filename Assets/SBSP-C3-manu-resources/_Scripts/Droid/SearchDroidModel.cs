@@ -27,24 +27,17 @@ public class SearchDroidModel : DroidModel {
 
     public List<Item> GetDroidStorage()
     {
-
         return _droidStorage;
-
     }
 
 
     public void SetDroidStorage(List<Item> newStorage)
     {
-
         _droidStorage = newStorage;
-
     }
 
     public int GetDroidStorageCapacity()
     {
-
         return _droidStorageCapacity;
-
     }
-
 }

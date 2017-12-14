@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SearchDroid : Droid{
-
+public class SearchDroid : Droid
+{
     public SearchDroid()
     {
-
         SetDroidModel(new SearchDroidModel());
-
     }
 
     public override void PerformDroidAction()
@@ -28,7 +26,6 @@ public class SearchDroid : Droid{
 
             if(model.GetDroidStorageCapacity() > model.GetDroidStorage().Count)
             {
-
                 int item = Mathf.RoundToInt(Random.Range(0f, 1f));
                 model.GetDroidStorage().Add(ItemFactory.instance.CreateItem((ItemType)item));
             }
@@ -46,10 +43,8 @@ public class SearchDroid : Droid{
         
         for(int i = 0; i < model.GetDroidStorage().Count; i++)
         {
-
             Debug.Log("Adding to inventory new Item");
             model.GetCurrentDroidBay().GetDroidBayModel().GetDroidManager().GetDroidManagerModel().GetMainController().GetInventoryManager().AddItem(model.GetDroidStorage()[i]);
-
         }
 
         model.SetDroidStorage(new List<Item>());
