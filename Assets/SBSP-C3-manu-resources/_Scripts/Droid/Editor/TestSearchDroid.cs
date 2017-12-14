@@ -4,10 +4,10 @@ using UnityEngine;
 namespace UnityTest
 {
     [TestFixture]
-    internal class CheckSearchDroidValuesAreSetToNull
+    internal class CheckSearchDroidValuesAreSetCorrectly
     {
         /**
-         * Checks max health value is 10
+         * Checks max health value is 100
          */
         [Test]
         public void TestSearchDroidMaxHealthIsOneHundred()
@@ -23,7 +23,7 @@ namespace UnityTest
         }
 
         /**
-         * Checks max energy value is 10
+         * Checks energy consumption value is 3
          */
         [Test]
         public void TestSearchDroidEnergyConsumptionIsThree()
@@ -38,7 +38,7 @@ namespace UnityTest
         }
 
         /**
-         * Checks max energy value is 10
+         * Checks max energy value is 200
          */
         [Test]
         public void TestSearchDroidMaxEnergyIsTwoHundred()
